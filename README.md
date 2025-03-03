@@ -1,4 +1,4 @@
-# Jackpot-Royale
+# Jackpot-Royal
 
 ## 🎲 Jeu de hasard en Python 🎰
 
