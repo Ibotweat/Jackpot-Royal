@@ -1,5 +1,4 @@
 # Jackpot-Royal
-![Image](jackpot_royal.png)
 
 ## 🎲 Jeu de hasard en Python 🎰
 
