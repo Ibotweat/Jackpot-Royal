@@ -30,6 +30,8 @@ Ce programme est un jeu de hasard où le joueur commence avec un solde de 1000�
 
 Python 3 doit être installé sur votre système.
 
+La petite police python est conseillée pour une meilleure visiblité du contenu
+
 📥 Installation
 
 Téléchargez le fichier Python sur votre calculatrice avec [ce lien](https://my.numworks.com/python/ibotweat/jackpot_royal).
