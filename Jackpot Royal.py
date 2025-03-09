@@ -1,13 +1,13 @@
 from random import*
-
-s=1*10**3
+s=1*10**2
 i=True #config ok
-cadeau=10
-casino=10
-boostx2=0
-boostx20=0
+cadeau=casino=10
+boostx2=boostx20=0
 ct=False
 unite="E" #Unite par defaut
+solde=best=s
+logMode="start"
+logArgent="1000"
 
 print("******************************************")
 print("************** BIENVENUE ! ***************")
@@ -37,21 +37,21 @@ while i==True :
   print("9. Config")
 
   mode=input("Choisir le mode : ")
-
   if mode in {"1","2","3","4","5","6","7","8","9"}:
     dev1=10123
     dev2=1010
     mode=int(mode)
     
     if mode==1:
+      logMode=logMode+",banque"
       print("")
       print("***************** Banque *****************")
       print("Vous possédez",solde,unite)
 
     if mode==2:
+      logMode=logMode+",nombre"
       cadeau=cadeau-1
-      valide=False
-      mvalide=False
+      valide=mvalide=False
       while valide==False:
         print("")
         print("************ Nombre Aléatoire ************")
@@ -64,14 +64,12 @@ while i==True :
             mise=int(input("Mise : "))
             if mise<=solde:
               mvalide=True
-
               n=randint(0,10)
               if nombre==n:
                 print("Vous choisissez",nombre)
                 print("Le robot choisit",n)
                 print("Résultat : GAGNE",mise*4*B2*B20,unite)
                 solde=solde+mise*4*B2*B20
-    
               else:
                 print("Vous choisissez",nombre)
                 print("Le robot choisit",n)
@@ -86,8 +84,9 @@ while i==True :
         boostx2=boostx2-1
       if boostx20>0:
         boostx20=boostx20-1
-    
+
     if mode==3:
+      logMode=logMode+",casino"
       if solde>=casino:
         cadeau=cadeau-1
         print("")
@@ -120,9 +119,9 @@ while i==True :
         boostx20=boostx20-1
     
     if mode==4:
+      logMode=logMode+",pfc"
       cadeau=cadeau-1
-      valide=False
-      mvalide=False
+      valide=mvalide=False
       while valide==False:
         print("")
         print("********* Pierre Feuille Ciseaux *********")
@@ -145,12 +144,10 @@ while i==True :
                 if n==1:
                   print("Le robot choisit Pierre")
                   print("Résultat : EGALITE")
-
                 elif n==2:
                   print("Le robot choisit Feuille")
                   print("Résultat : PERDU",mise,unite)
                   solde=solde-mise
-
                 else:
                   print("Le robot choisit Ciseaux")
                   print("Résultat : GAGNE",mise*2*B2*B20,unite)  
@@ -162,36 +159,30 @@ while i==True :
                   print("Le robot choisit Pierre")
                   print("Résultat : GAGNE",mise*2*B2*B20,unite)
                   solde=solde+mise*2*B2*B20
-
                 elif n==2:
                   print("Le robot choisit Feuille")
                   print("Résultat : EGALITE")
-
                 else:
                   print("Le robot choisit Ciseaux")
                   print("Résultat : PERDU",mise,unite)  
                   solde=solde-mise
-
+              
               else:
                 print("Vous choississez Ciseaux")
                 if n==1:
                   print("Le robot choisit Pierre")
                   print("Résultat : PERDU",mise,unite)
                   solde=solde-mise
-
                 elif n==2:
                   print("Le robot choisit Feuille")
                   print("Résultat : GAGNE",mise*2*B2*B20,unite)
                   solde=solde+mise*2*B2*B20
-
                 else:
                   print("Le robot choisit Ciseaux")
                   print("Résultat : EGALITE")  
-
             else:
               print("Vous n'avez pas assez d'argent !")
               mvalide=False
-
         else:
           print("Le nombre doit être 1, 2 ou 3")
 
@@ -201,9 +192,9 @@ while i==True :
         boostx20=boostx20-1
 
     if mode==5:
+      logMode=logMode+",coinflip"
       cadeau=cadeau-1
-      valide=False
-      mvalide=False
+      valide=mvalide=False
       while valide==False:
         print("")
         print("************** Pile ou Face **************")
@@ -213,7 +204,6 @@ while i==True :
         if select in {"1","2"}:
           select=int(select)
           valide=True
-
           while mvalide==False:
             mise=int(input("Mise : "))
             if mise<=solde:
@@ -224,12 +214,10 @@ while i==True :
                 print("Vous choisissez Pile")
               else:
                 print("Vous choisissez Face")
-
               if n==1:
                 print("La pièce tombe sur Pile")
               else:
                 print("La piece tombe sur Face")
-
               if select==n:
                 print("Résultat : GAGNE",mise*2*B2*B20,unite)
                 solde=solde+mise*2*B2*B20
@@ -238,8 +226,7 @@ while i==True :
                 solde=solde-mise
             else:
               print("Vous n'avez pas assez d'argent !")
-              mvalide=False
-          
+              mvalide=False  
         else:
           print("Le nombre doit être 1 ou 2")
           valide = False
@@ -250,6 +237,7 @@ while i==True :
         boostx20=boostx20-1
 
     if mode==6:
+      logMode=logMode+",dn"
       cadeau=cadeau-1
       x=3
       continu=True
@@ -275,17 +263,16 @@ while i==True :
                 print("****************")
                 don=don*2
                 x=randint(1,3)
-
               else:
                 print("****************")
                 print("Vous récupérez",don,unite)
                 continu=False
                 solde=solde+don
-
             else:
               print("Sélectionner 1 ou 2")
 
     if mode==7:
+      logMode=logMode+",cadeau"
       print("")
       print("***************** Cadeau *****************")
       print("Gagnez jusqu'a 100",unite)
@@ -298,6 +285,7 @@ while i==True :
         cadeau=10
 
     if mode==8:
+      logMode=logMode+"boost,"
       sverif=False
       while sverif==False:
         print("")
@@ -329,8 +317,7 @@ while i==True :
           
           elif s==3:
             print("Boost x2 :", boostx2, "Restant")
-            print("Boost x20 :", boostx20, "Restant")
-          
+            print("Boost x20 :", boostx20, "Restant")    
           else:
             print("Annulé")
 
@@ -338,6 +325,7 @@ while i==True :
          print("nombre de 1 a 3 !")
 
     if mode==9:
+      logMode=logMode+",config"
       vchoice=False
       while vchoice==False:
         print("")
@@ -354,7 +342,7 @@ while i==True :
 
           if choice==1:
             print("Informations :")
-            print("Version 1.4")
+            print("Version 1.5 - 08/03/2025")
             print("Numworks N0120")
 
           if choice==3:
@@ -373,8 +361,12 @@ while i==True :
                   print("Unité en S activé")
                   unite="S"
                 if int(selectunite)==dev1:
+                  for r in range(15):
+                    print("*******************")
                   print("*** Développeur ***")
-                  modif=int(input("DEV : "))
+                  print(logArgent)
+                  print(logMode)
+                  modif=int(input("Ajouter : "))
                   solde=solde+modif
                 if int(selectunite)==dev2:
                   if ct==False:
@@ -398,19 +390,23 @@ while i==True :
           if choice==4:
             i=False
             print("A bientot !")
-
         else:
           print("Nombre de 1 a 5 !")
-
   else:
     print("Nombre de 1 a 9 !")
-
+    
+  logArgent=logArgent+","+str(solde)
+  
   if choice!=4:
+    if solde>best:
+      print("Nouveau record !",solde,unite)
+      logArgent=logArgent+"!"
+      best=solde
     continuer=input("Ok pour continuer")
-
+    
   if solde<=0 :
     print("******************************************")
-    print("")
+    print()
     print("******************************************")
     print("******* Vous n'avez plus d'argent ********")
     print("******************************************")
@@ -421,5 +417,5 @@ print("Merci de jouer !")
 
 #Ibotweat 2025
 #https://my.numworks.com/python/ibotweat
-#Version : 1.4
-#03/03/2025
+#Version : 1.5
+#08/03/2025
