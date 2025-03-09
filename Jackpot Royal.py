@@ -1,5 +1,5 @@
 from random import*
-s=1*10**2
+s=1*10**3
 i=True #config ok
 cadeau=casino=10
 boostx2=boostx20=0
@@ -13,7 +13,7 @@ print("******************************************")
 print("************** BIENVENUE ! ***************")
 print("******* LE JEU COMMENCE AVEC 1000E *******")
 print("******************************************")
-solde=s
+
 while i==True :
   if boostx2>0:
     B2=2
@@ -84,7 +84,7 @@ while i==True :
         boostx2=boostx2-1
       if boostx20>0:
         boostx20=boostx20-1
-
+        
     if mode==3:
       logMode=logMode+",casino"
       if solde>=casino:
@@ -403,7 +403,9 @@ while i==True :
       logArgent=logArgent+"!"
       best=solde
     continuer=input("Ok pour continuer")
-    
+
+
+
   if solde<=0 :
     print("******************************************")
     print()
