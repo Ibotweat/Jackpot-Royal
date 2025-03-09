@@ -54,10 +54,28 @@ Téléchargez le fichier Python sur votre calculatrice avec [ce lien](https://my
 
 ---
 
+### 📜 Ajout de logs dans des variables
+
+🔧 Modifications apportées
+Ajout de variables pour stocker les logs en mémoire.
+Mise en place d'une structure permettant d'accéder aux logs à tout moment.
+Amélioration du suivi des erreurs et des événements importants.
+
+🚀 Avantages :
+
+✔️ Accès rapide aux logs en mémoire.
+
+✔️ Possibilité d'afficher les logs sans fichier externe.
+
+✔️ Utile pour les tests et le debugging.
+
+---
+
 
 ### 📅 Version
 
 1.4 (03/03/2025)
+Ce projet a été mis à jour pour inclure un système de journalisation (logging) stocké dans des variables. Cela permet de suivre plus facilement l'exécution du programme et d'analyser les événements sans dépendre uniquement des fichiers de log ou de la console.
 
 Merci de jouer et bonne chance ! 🍀🎰
 
