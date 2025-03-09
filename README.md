@@ -76,7 +76,7 @@ Amélioration du suivi des erreurs et des événements importants.
 
 1.5 (08/03/2025)
 
-➕ Ce projet a été mis à jour pour inclure un système de journalisation (logging) stocké dans des variables. Cela permet de suivre plus facilement l'exécution du programme et d'analyser les événements sans dépendre uniquement des fichiers de log ou de la console.
+➕ Ce projet a été mis à jour pour inclure un système de journalisation (logging) stocké dans des variables. Cela permet de suivre plus facilement l'exécution du programme et d'analyser les événements sans dépendre uniquement de fichiers de log.
 
 ➕ Allègement du code et des fonctions inutiles
 
